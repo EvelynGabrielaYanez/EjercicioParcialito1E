@@ -24,7 +24,38 @@ Para poder sacar el permiso de circulación se deben llenar los siguientes datos
 */
 
 
-function mostrar()
-{
-	alert("Hola Mundo");
+function mostrar() {
+	let vNombreApellido;
+	let vTempCorporal;
+	let vSintomas;
+
+	vNombreApellido = document.getElementById("nombreyapellido").value;
+
+	vTempCorporal = parseFloat(document.getElementById("temperatura").value);
+
+	if (vTempCorporal < 35 || vTempCorporal > 40) {
+		alert("Temperatura incorrecta. Ingresar una temperatura entre 35° y 40°.");
+
+	} else {
+
+		vSintomas = document.getElementById("Sintoma").value;
+
+		if (vTempCorporal >= 38) {
+
+			alert("Permiso no otorgado");
+
+		} else if (vSintomas == "Tos" && vTempCorporal <= 37) {
+
+			alert("Permiso otorgado. Por favor no se olvide de toser sobre su codo.");
+
+		} else if (vSintomas == "DificultadParaRespirar") {
+
+			alert("Permiso no otorgado");
+
+		} else {
+
+			alert("Permiso otorgado.");
+
+		}
+	}
 }
